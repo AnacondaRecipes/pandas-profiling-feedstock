@@ -35,6 +35,7 @@ test:
 about:
   home: http://github.com/jospolfliet/pandas-profiling
   license: MIT
+  license_family: MIT
   license_file: LICENSE
   summary: 'Generate profile report for pandas DataFrame'
   dev_url: http://github.com/jospolfliet/pandas-profiling
