@@ -22,7 +22,7 @@ requirements:
     - setuptools
 
   run:
-    - python >=2.7
+    - python
     - pandas >=0.19
     - matplotlib >=1.4
     - jinja2 >=2.8
