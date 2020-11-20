@@ -1,7 +1,7 @@
 {% set name = "pandas-profiling" %}
-{% set version = "1.4.1" %}
+{% set version = "2.9.0" %}
 {%set hash_type = "md5" %}
-{%set hash_val = "6b5b0f759dca4f0ebdf6972cf4475b3b" %}
+{% set hash_val = "2afa441081ca4b9b0f7c458a050f3d98" %}
 
 package:
   name: {{ name|lower }}
@@ -14,32 +14,50 @@ source:
 
 build:
   number: 0
-  script: python setup.py install --single-version-externally-managed --record record.txt
+  noarch: python
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
     - python
-    - setuptools
-
+    - pip
   run:
     - python
-    - pandas >=0.19
-    - matplotlib >=1.4
-    - jinja2 >=2.8
-    - six >=1.9
+    - scipy >=1.4.1
+    - joblib
+    - pandas >=0.25.3,!=1.0.1,!=1.0.0,!=1.0.2,!=1.1.0
+    - matplotlib-base >=3.2.0
+    - jinja2 >=2.11.1
+    - confuse >=1.0.0
+    - visions 0.5.0
+    - numpy >=1.16.0
+    - attrs >=19.3.0
+    - ipywidgets >=7.5.1
+    - requests >=2.23.0
+    - tqdm >=4.43.0
+    - imagehash
+    - missingno >=0.4.2
+    - htmlmin >=0.1.12
+    - phik >=0.9.10
 
 test:
   imports:
     - pandas_profiling
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
-  home: http://github.com/jospolfliet/pandas-profiling
+  home: http://github.com/pandas-profiling/pandas-profiling
   license: MIT
-  license_family: MIT
   license_file: LICENSE
-  summary: 'Generate profile report for pandas DataFrame'
-  dev_url: http://github.com/jospolfliet/pandas-profiling
+  summary: Generate profile report for pandas DataFrame
+  dev_url: http://github.com/pandas-profiling/pandas-profiling
+  doc_url: https://pandas-profiling.github.io/pandas-profiling/docs/
 
 extra:
   recipe-maintainers:
+    - sbrugman
     - proinsias
+    - philip-khor
