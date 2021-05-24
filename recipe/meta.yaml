@@ -41,7 +41,7 @@ requirements:
     - ipywidgets >=7.5.1
     - imagehash
     - pillow
-    - seaborn-base >=0.10.1
+    - seaborn >=0.10.1
     - joblib
     - ipython
     - markupsafe >=1.1.1
