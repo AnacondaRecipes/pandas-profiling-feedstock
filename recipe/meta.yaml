@@ -21,6 +21,8 @@ requirements:
   host:
     - python >=3.6
     - pip
+    - setuptools
+    - wheel
   run:
     - python >=3.6
     - scipy >=1.4.1
@@ -45,18 +47,20 @@ requirements:
     - joblib
     - ipython
     - markupsafe >=1.1.1
+    - multimethod >=1.4
 
 test:
   imports:
     - pandas_profiling
-  commands:
-    - pip check
   requires:
     - pip
+  commands:
+    - pip check
 
 about:
   home: http://github.com/pandas-profiling/pandas-profiling
   license: MIT
+  license_family: MIT
   license_file: LICENSE
   summary: Generate profile report for pandas DataFrame
   dev_url: http://github.com/pandas-profiling/pandas-profiling
